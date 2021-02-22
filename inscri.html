@@ -31,25 +31,26 @@
                 <div id="s-cont">
                     <h2 data-aos="zoom-out-left" data-aos-once="true" data-aos-delay="400">Nom et prénom de parent:</h2>
                     <input data-aos="flip-down" data-aos-once="true" data-aos-delay="400" class="inp" type="text"
-                        placeholder="ex: Kim Un"></input>
+                        placeholder="ex: Kim Un" id="NAME"></input>
                     <h2 data-aos="zoom-out-left" data-aos-once="true" data-aos-delay="500">Votre E-mail:</h2>
                     <input data-aos="zoom-out" data-aos-once="true" data-aos-delay="500" class="inp" type="text"
-                        placeholder="ex: kim@exemple.com"></input>
+                        placeholder="ex: kim@exemple.com" id="MAIL"></input>
                     <h2 data-aos="zoom-out-left" data-aos-once="true" data-aos-delay="600">Mot de pass:</h2>
                     <input data-aos="flip-down" data-aos-once="true" data-aos-delay="600" class="inp" type="text"
-                        placeholder="**********"></input>
+                        placeholder="**********" id="PASS"></input>
                     <h2 data-aos="zoom-out-left" data-aos-once="true" data-aos-delay="700">Profession:</h2>
                     <input data-aos="zoom-out" data-aos-once="true" data-aos-delay="700" class="inp" type="text"
                         placeholder="**********"></input>
                     <h2 data-aos="zoom-out-left" data-aos-once="true" data-aos-delay="800">Lien de parenté:</h2>
                     <h3 data-aos="zoom-out-left" data-aos-once="true" data-aos-delay="850">Mére</h3>
                     <input data-aos="flip-down" data-aos-once="true" data-aos-delay="850" class="rd" type="radio"
-                        name="gender"></input>
+                        name="gender" id="GN1"></input>
                     <h3 data-aos="zoom-out-left" data-aos-once="true" data-aos-delay="900">Pére</h3>
                     <input data-aos="zoom-out" data-aos-once="true" data-aos-delay="900" class="rd" type="radio"
-                        name="gender"></input>
+                        name="gender" id="GN2"></input>
                 </div>
-                <div class="btn1" id="btn" data-aos-once="true" data-aos="fade-in" data-aos-delay="1200">
+                <div class="btn1" onclick="VERIF();" id="btn" data-aos-once="true" data-aos="fade-in"
+                    data-aos-delay="1200">
                     <div class="bbtn" id="bbtn">►►►►►►►</div>
                 </div>
             </div>
@@ -95,11 +96,16 @@
                 </div>
             </div>
         </form>
+
+
         <div id="msg">
             <h1>Félicitations votre demande a bien traiter ✔️</h1>
 
         </div>
     </section>
+    <alert class="ALERT">
+    </alert>
+
     <script src="Scripts/script.js"></script>
     <script src="Scripts/OnScrollAni/aos.js"></script>
     <script>

@@ -1239,6 +1239,12 @@ alert.BUY{
   width: 0px;
   filter: drop-shadow(2px 2px 12px #2ECC40);
 }
+alert.ALERT{
+  background-color: #db2730;
+  height: 80px;
+  width: 0px;
+  filter: drop-shadow(2px 2px 12px #cc2e85);
+}
 alert.FAV{
   background-color: #85144b;
   height: 80px;
@@ -1401,3 +1407,21 @@ alert.FAV{
     transform: scale(1);
   }
 }
+
+@keyframes error{
+  0%{
+    transform: translate(0px);
+  }
+  50%{
+    transform: translate(-50px);
+    background-color: red;
+  }
+  80%{
+    transform: translate(50px);
+    background-color: red;
+  }
+  100%{
+    transform: translate(0px);
+  }
+}
+/************************************/

@@ -1,20 +1,5 @@
 $(function () {
-    $("#PG2 #CONT form #frm1 #btn").click(function () {
-        $('#PG2 #CONT form .img').css({
-            transform: 'translate(-624px)',
-            '-webkit-transition-duration': '1s',
-            animation: 'img 2.0s  ease',
 
-        });
-        $("#PG2 #CONT form #frm1").fadeOut(1000);
-        $('#PG2 #CONT form #frm2').css({
-            visibility: 'visible',
-            position: 'absolute',
-            float: 'right',
-            margin: ' 0 0 0 639px'
-        });
-        AOS.refresh();
-    });
     $("#PG2 #CONT form #frm2 .btn2").click(function () {
         if (window.innerWidth > 500) {
             $("#PG2 #CONT form #frm2").fadeOut(200);
@@ -298,3 +283,90 @@ $(function () {
     });
 
 });
+//!*********************************************************************/
+//!***********************    CONTROLE FORMS   ************************/
+//!*******************************************************************/
+
+function verifPassword() {
+    var pass = document.getElementById('PASS').value;
+    if (pass.length > 0) {
+        GoNext = true
+    } else {
+        GoNext = false
+    }
+}
+function checkIfAlpha() {
+    var x = document.getElementById('NAME').value;
+    var i = 0
+    while (i < x.length && 'A' <= x.charAt(i).toUpperCase() && x.charAt(i).toUpperCase() <= 'Z') {
+        console.log(i)
+        i++;
+    };
+    if (i == x.length && x.length > 0) {
+        return 'PASS'
+    } else {
+        return 'STOP'
+    }
+}
+function VERIF() {
+    verifPassword();
+    verifalpha = checkIfAlpha();
+    console.log(verifalpha)
+    if (GoNext == true && verifalpha == 'PASS') {
+
+        console.log('worked11111111111111')
+
+        $('#PG2 #CONT form .img').css({
+            transform: 'translate(-624px)',
+            '-webkit-transition-duration': '1s',
+            animation: 'img 2.0s  ease',
+        });
+        $("#PG2 #CONT form #frm1").fadeOut(1000);
+        $('#PG2 #CONT form #frm2').css({
+            visibility: 'visible',
+            position: 'absolute',
+            float: 'right',
+            margin: ' 0 0 0 639px'
+        });
+        AOS.refresh();
+    }
+    else {
+        console.log('worked')
+        $('alert.ALERT').html('<div id="ico" data-aos="zoom-out-left" data-aos-delay="600"> <img src="../Images/PG-3/cancel.svg"> </div> <h1 > ERROR</h1>');
+        $('alert.ALERT').css({
+            width: '600px',
+            height: '80px',
+            'transition-duration': '1.9s',
+
+        })
+        $('alert.ALERT #ico').css({
+            animation: 'ICO 1.5s  ease-in-out'
+        })
+        setTimeout(() => {
+
+            $('alert.ALERT').css({
+                width: '0px',
+                height: '80px',
+                'transition-duration': '2s',
+            })
+        }, 6000);
+        $("#PG2 #CONT form #frm1 #btn").click(function () {
+            $("#PG2 #CONT form #frm1 #btn").css({
+                animation: 'error 0.5s  ease'
+            })
+            setTimeout(() => {
+                $("#PG2 #CONT form #frm1 #btn").css({
+                    animation: 'none'
+                })
+            }, 2000)
+        });
+
+    }
+}
+
+
+
+
+
+
+
